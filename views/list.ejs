@@ -1,0 +1,24 @@
+<%- include("header") -%>
+    <div class ="box heading">
+      <h1> <%=listTitle %></h1>
+    </div>
+
+    <div class ="box">
+      <% for (let i =0 ; i<newListItems.length; i++){ %>
+        <label class ="item">
+            <input class="checkbox" type="checkbox" />
+            <p><%= newListItems[i]%> </p>
+            <span class="checkmark"></span>
+        </label>
+        <% } %>
+        <form class ="item" action ="/" method = "post">
+          <input type ="text" name ="newItem" placeholder = "New Item" autocomplete = "off" autofocus ="true"/>
+          <button class="btn" type = "submit" name = "list" value = "<%= listTitle%>"><i class="gg-add"></i></button>
+        </form>
+    </div>
+
+    <%# This tag comes from EJS Template%>
+    <%# https://ejs.co/#docs%>
+    <%# look at the Tags section%>
+
+<%- include("footer") -%>
