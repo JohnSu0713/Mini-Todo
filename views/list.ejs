@@ -1,15 +1,16 @@
 <%- include("header") -%>
-    <div class ="box heading">
+    <div class ="box" id="heading">
       <h1> <%=listTitle %></h1>
     </div>
 
     <div class ="box">
       <% for (let i =0 ; i<newListItems.length; i++){ %>
-        <label class ="item">
-            <input class="checkbox" type="checkbox" />
-            <p><%= newListItems[i]%> </p>
-            <span class="checkmark"></span>
-        </label>
+        <div class ="item">
+        <input type="checkbox" />
+
+          <p><%= newListItems[i]%> </p>
+        </div>
+
         <% } %>
         <form class ="item" action ="/" method = "post">
           <input type ="text" name ="newItem" placeholder = "New Item" autocomplete = "off" autofocus ="true"/>

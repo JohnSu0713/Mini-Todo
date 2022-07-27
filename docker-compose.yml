@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  node:
+    image: node:16
+    container_name: todo-list
+    build: .
+    restart: always
+    ports:
+      - "3033:${PORT:-3033}"
+    volumes:
+      - ".:/usr/todo"
